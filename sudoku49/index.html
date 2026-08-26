@@ -5,17 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Политика конфиденциальности — «Судоку Соты»</title>
   <style>
-    body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-           max-width: 720px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #222; }
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px;
+      line-height: 1.6;
+      color: #222;
+    }
     h1 { font-size: 24px; }
     h2 { font-size: 18px; margin-top: 28px; }
     p, li { font-size: 15px; }
     a { color: #0366d6; word-break: break-word; }
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .lang-switch button {
+      background: #0366d6;
+      color: white;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .lang-switch button:hover {
+      background: #0255b3;
+    }
+    .ru { display: block; }
+    .en { display: none; }
+    .lang-en .ru { display: none; }
+    .lang-en .en { display: block; }
   </style>
 </head>
 <body>
+
+<div class="lang-switch">
+  <button onclick="toggleLang()">🇬🇧 English</button>
+</div>
+
+<!-- =========== РУССКАЯ ВЕРСИЯ =========== -->
+<div id="ru" class="ru">
   <h1>Политика конфиденциальности приложения «Судоку Соты»</h1>
-  <p>Дата обновления: 16 августа 2026 г.</p>
+  <p>Дата обновления: 26 августа 2026 г.</p>
 
   <h2>1. Общие положения</h2>
   <p>Настоящая политика описывает, какие данные обрабатывает мобильное приложение
@@ -64,5 +97,79 @@
   <h2>8. Контакты</h2>
   <p>Вопросы по настоящей политике:
   <a href="mailto:hartur.khisamov.80.khisamov@mail.ru">hartur.khisamov.80.khisamov@mail.ru</a></p>
+</div>
+
+<!-- =========== АНГЛИЙСКАЯ ВЕРСИЯ =========== -->
+<div id="en" class="en">
+  <h1>Privacy Policy for "Sudoku Soty"</h1>
+  <p>Last updated: August 26, 2026</p>
+
+  <h2>1. General Provisions</h2>
+  <p>This policy describes what data the mobile application
+  "Sudoku Soty" (hereinafter — the "App") processes and how it is used.
+  By installing the App, you agree to the terms of this policy.</p>
+
+  <h2>2. Data Stored on the Device</h2>
+  <p>The App does not collect or transmit personal data to the developer's server.
+  Game progress, statistics, and settings are stored only on your device
+  and are not transmitted over the network.</p>
+
+  <h2>3. Notifications</h2>
+  <p>The App may display local reminder notifications. They are disabled
+  by default, enabled by the user in settings, and generated on the device
+  without using push servers. System permission is requested when enabled.
+  Notifications can be disabled in the App or system settings.</p>
+
+  <h2>4. Advertising</h2>
+  <p>The App may display advertising. For this purpose, it uses the
+  Yandex Mobile Ads SDK, which may process anonymized data (advertising
+  ID, technical device information) in accordance with Yandex's
+  privacy policy:
+  <a href="https://yandex.com/legal/confidential/">https://yandex.com/legal/confidential/</a>.
+  The advertising SDK does not transmit personal data to the App developer.</p>
+
+  <h2>5. Third-Party Services</h2>
+  <p>For distributing updates and receiving feedback, the App uses
+  app store services:</p>
+  <ul>
+    <li><strong>RuStore</strong> — when checking for updates and submitting reviews,
+    it may process anonymized device data according to its policy:
+    <a href="https://www.rustore.ru/help/legal/privacy-policy-users">https://www.rustore.ru/help/legal/privacy-policy-users</a></li>
+    <li><strong>HUAWEI AppGallery</strong> — when opening the app page in the store,
+    data is processed according to Huawei's policy:
+    <a href="https://consumer.huawei.com/en/privacy/">https://consumer.huawei.com/en/privacy/</a></li>
+  </ul>
+
+  <h2>6. Children</h2>
+  <p>The App is suitable for all ages and does not knowingly collect personal
+  data, including children's data.</p>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this policy. The current version is always available at:
+  <a href="https://artur484.github.io/privacy-policy/sudoku49/">https://artur484.github.io/privacy-policy/sudoku49/</a></p>
+
+  <h2>8. Contact</h2>
+  <p>Questions about this policy:
+  <a href="mailto:hartur.khisamov.80.khisamov@mail.ru">hartur.khisamov.80.khisamov@mail.ru</a></p>
+</div>
+
+<script>
+  let lang = 'ru';
+
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.querySelector('.lang-switch button');
+    if (lang === 'ru') {
+      lang = 'en';
+      body.classList.add('lang-en');
+      btn.textContent = '🇷🇺 Русский';
+    } else {
+      lang = 'ru';
+      body.classList.remove('lang-en');
+      btn.textContent = '🇬🇧 English';
+    }
+  }
+</script>
+
 </body>
 </html>
